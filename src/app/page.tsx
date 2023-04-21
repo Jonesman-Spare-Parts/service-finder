@@ -1,19 +1,25 @@
+"use client";
 import "../styles/global.css";
-import Hero from "@/components/Hero";
+import HomeHero from "@/components/HomeHero";
 import ServicesLogos from "@/components/ServicesLogos";
 import CategoryList from "@/components/CategoryList";
 import ContentSection from "@/components/ContentSection";
-import CTASection from "@/components/CTASection";
+import DiscountCTASection from "@/components/DiscountCTASection";
+import PageTransition from "@/components/PageTransition";
 
-const Page = () => {
+type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
+const Page = (ref?: IndexPageRef) => {
   return (
-    <section className="container mx-auto">
-      <Hero />
+    <PageTransition
+      ref={ref}
+      className="container mx-auto flex flex-col gap-16"
+    >
+      <HomeHero />
       <ServicesLogos />
       <CategoryList />
       <ContentSection />
-      <CTASection />
-    </section>
+      <DiscountCTASection />
+    </PageTransition>
   );
 };
 

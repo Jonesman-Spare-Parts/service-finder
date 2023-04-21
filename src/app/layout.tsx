@@ -1,6 +1,8 @@
+"use client";
 import React from "react";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { AnimatePresence } from "framer-motion";
 
 export default function RootLayout({
   children,
@@ -11,7 +13,11 @@ export default function RootLayout({
     <html>
       <body>
         <NavBar />
-        <main className={"mt-24 mx-auto w-5/6 "}>{children}</main>
+        <main className={"mt-24 mx-auto w-5/6 "}>
+          <AnimatePresence initial={false} mode="popLayout">
+            {children}
+          </AnimatePresence>
+        </main>
         <Footer />
       </body>
     </html>

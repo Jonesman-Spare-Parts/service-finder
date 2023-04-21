@@ -1,16 +1,20 @@
+"use client";
 import React from "react";
 import PrimaryButton from "@/components/PrimaryButton";
+import PageTransition from "@/components/PageTransition";
 
-function Page() {
+type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
+
+function Page(ref: IndexPageRef) {
   return (
-    <section className="bg-white dark:bg-gray-900">
+    <PageTransition ref={ref} className="bg-white dark:bg-gray-900">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900 dark:text-white">
           Contact Us
         </h2>
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-          Do you have an issue or you want to ask us something? Send us a
-          message and we will get back to you as soon as possible.
+          Do you have an issue or you want to join us? Send us a message and we
+          will get back to you as soon as possible.
         </p>
         <form action="#" className="space-y-8">
           <div>
@@ -60,7 +64,7 @@ function Page() {
           <PrimaryButton name={"Send Message"} />
         </form>
       </div>
-    </section>
+    </PageTransition>
   );
 }
 

@@ -3,16 +3,15 @@ const nextConfig = {
   experimental: {
     appDir: true,
   },
-  images : {
-    remotePatterns:[
+  images: {
+    remotePatterns: [
       {
-        protocol : "https",
-        hostname: "image.winudf.com",
-        port:'',
+        protocol: "https",
+        hostname: "**",
+        port: "",
+      },
+    ],
+  },
+};
 
-      }
-    ]
-  }
-}
-
-module.exports = nextConfig
+module.exports = nextConfig;
