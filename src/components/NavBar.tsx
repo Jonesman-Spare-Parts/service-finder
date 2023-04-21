@@ -20,8 +20,8 @@ const navRoutes = [
     route: "/map",
   },
   {
-    name: "Blog",
-    route: "/blog",
+    name: "Blogs",
+    route: "/blogs",
   },
 ];
 
