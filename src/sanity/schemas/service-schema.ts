@@ -1,5 +1,5 @@
 const service = {
-  name: "Service",
+  name: "service",
   title: "Services",
   type: "document",
   fields: [
@@ -59,7 +59,7 @@ const service = {
       type: "text",
     },
     {
-      name: "Background",
+      name: "background",
       title: "Background",
       type: "text",
     },
@@ -73,6 +73,17 @@ const service = {
       title: "Services",
       type: "array",
       of: [{ type: "string" }],
+    },
+    {
+      name: "rating",
+      title: "Rating",
+      type: "number",
+      limit: 5,
+    },
+    {
+      name: "startPrice",
+      title: "Start Price",
+      type: "number",
     },
   ],
 };

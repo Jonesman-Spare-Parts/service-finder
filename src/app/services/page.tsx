@@ -1,10 +1,10 @@
-"use client";
 import "../../styles/global.css";
 import _ from "lodash";
-import { ServiceCard } from "@/components/ServiceCard";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { Carousel, Item } from "@/components/Carousel";
-import PageTransition from "@/components/PageTransition";
+import { getServices } from "@/sanity/sanity-utils";
+import { ServiceCard } from "@/components/ServiceCard";
+import { Service } from "@/types/Service";
 
 const items: Item[] = [
   {
@@ -22,20 +22,20 @@ const items: Item[] = [
 ];
 type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
 
-const Page = (ref: IndexPageRef) => {
+export default async function Page() {
   const arr = _.range(10);
 
+  const services = await getServices();
+  console.log("services", services);
   return (
-    <PageTransition ref={ref}>
+    <div>
       <Carousel items={items} />
 
-      <section className={"grid grid-cols-4 gap-4"}>
-        {arr.map((key, index) => (
-          <ServiceCard key={key} id={index.toString()} />
+      <section className={"grid grid-cols-3 lg:grid-cols-4  gap-4"}>
+        {services.map((service: Service) => (
+          <ServiceCard key={service._id} id={service._id} service={service} />
         ))}
       </section>
-    </PageTransition>
+    </div>
   );
-};
-
-export default Page;
+}

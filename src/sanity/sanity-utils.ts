@@ -1,24 +1,31 @@
-import { createClient } from "next-sanity";
+import { createClient, groq } from "next-sanity";
+import { Service } from "@/types/Service";
 
-export async function getServices() {
+export async function getServices(): Promise<Service[]> {
   const client = createClient({
     projectId: "xomm19bx",
     dataset: "production",
-    apiVersion: "2023-04-18",
+    apiVersion: "2023-03-04",
   });
 
   return client.fetch(
-    `*[_type == "service"]{
-      _id,
-      _createdAt,
-      name,
-      "slug" : slug.current,
-      "image" : image.asset->url,
-      overview,
-      background,
-      "category" : category->name,
-      offer,
-      "services" : services[]->name
-     }`
+    groq`
+    *[_type=="service"]{
+           _id,
+           _createdAt,
+            name,
+            description,
+            "slug": slug.current,
+            "image": image.asset->url,
+            category,
+            rating,
+            startPrice,
+            offer,
+            overview,
+            background,
+            url,
+            services,
+}
+    `
   );
 }
