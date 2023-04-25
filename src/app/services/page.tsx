@@ -1,5 +1,4 @@
 import "../../styles/global.css";
-import _ from "lodash";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { Carousel, Item } from "@/components/Carousel";
 import { getServices } from "@/sanity/sanity-utils";
@@ -20,11 +19,8 @@ const items: Item[] = [
     image: "https://www.hospitalitynet.org/picture/xxl_153107378.jpg",
   },
 ];
-type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
 
 export default async function Page() {
-  const arr = _.range(10);
-
   const services = await getServices();
   console.log("services", services);
   return (
