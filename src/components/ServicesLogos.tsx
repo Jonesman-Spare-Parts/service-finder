@@ -1,14 +1,9 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import {
-  FaAirbnb,
-  FaTripadvisor,
-  SiDoordash,
-  SiKfc,
-  SiUbereats,
-  TbBrandBooking,
-} from "react-icons/all";
+import { FaAirbnb, FaTripadvisor } from "react-icons/fa";
+import { SiDoordash, SiKfc, SiUbereats } from "react-icons/si";
+import { TbBrandBooking } from "react-icons/tb";
 
 function ServicesLogos() {
   return (

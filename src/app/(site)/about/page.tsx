@@ -2,7 +2,6 @@
 import React from "react";
 import AboutHero from "@/components/AboutHero";
 import MemberCard, { Member } from "@/components/MemberCard";
-import PageTransition from "@/components/PageTransition";
 
 const members: Member[] = [
   {
@@ -35,13 +34,9 @@ const members: Member[] = [
   },
 ];
 
-type PageProps = {
-  ref: any;
-};
-
-function Page({ ref }: PageProps) {
+function Page() {
   return (
-    <PageTransition ref={ref}>
+    <section>
       <AboutHero />
       <section className="bg-white dark:bg-gray-900">
         <div className="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
@@ -108,7 +103,7 @@ function Page({ ref }: PageProps) {
           </div>
         </div>
       </section>
-    </PageTransition>
+    </section>
   );
 }
 

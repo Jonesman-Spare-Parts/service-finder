@@ -1,15 +1,12 @@
 "use client";
 import React from "react";
-import PageTransition from "@/components/PageTransition";
 import Link from "next/link";
 import { BiBookmarkPlus } from "react-icons/bi";
 import Image from "next/image";
 import bookImage from "@/assets/images/social-media-concept-with-smartphone.jpg";
 
-type IndexPageRef = React.ForwardedRef<HTMLDivElement>;
-
-const Page = (ref: IndexPageRef) => (
-  <PageTransition ref={ref}>
+const Page = () => (
+  <div>
     <Link href={"./blogs/blog"}>
       <h1 className={"text-2xl"}>All Blogs Page</h1>
     </Link>
@@ -37,7 +34,7 @@ const Page = (ref: IndexPageRef) => (
         </span>
       </span>
     </div>
-  </PageTransition>
+  </div>
 );
 
 export default Page;

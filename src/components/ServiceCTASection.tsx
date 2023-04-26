@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { FaExternalLinkAlt, FaShoppingCart } from "react-icons/all";
+import { FaExternalLinkAlt, FaShoppingCart } from "react-icons/fa";
 
 type ServiceCTASectionProps = {
   serviceName: string;

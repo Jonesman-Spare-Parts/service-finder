@@ -1,7 +1,7 @@
 import React from "react";
 import CategoryCard from "@/components/CategoryCard";
-import { TbSoup } from "react-icons/all";
 import Link from "next/link";
+import { TbSoup } from "react-icons/tb";
 
 const categoriesArr = [
   {

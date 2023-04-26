@@ -7,7 +7,7 @@ import {
   FaInstagramSquare,
   FaTiktok,
   FaTwitter,
-} from "react-icons/all";
+} from "react-icons/fa";
 
 function Footer() {
   return (

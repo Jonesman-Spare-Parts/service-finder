@@ -2,7 +2,7 @@ import React from "react";
 import ServiceCTASection from "@/components/ServiceCTASection";
 import { Item } from "@/components/Carousel";
 import Image from "next/image";
-import { FaCheckCircle } from "react-icons/all";
+import { FaCheckCircle } from "react-icons/fa";
 import DiscountCTASection from "@/components/DiscountCTASection";
 import { getService } from "@/sanity/sanity-utils";
 

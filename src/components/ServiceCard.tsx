@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Link from "next/link";
 import { Service } from "@/types/Service";
-import { FaStar } from "react-icons/all";
+import { FaStar } from "react-icons/fa";
 
 interface ServiceCardProps {
   id: string;

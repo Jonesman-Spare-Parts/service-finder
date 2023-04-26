@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import traveling from "../assets/images/traveling.svg";
 import Link from "next/link";
-import { FaArrowRight } from "react-icons/all";
+import { FaArrowRight } from "react-icons/fa";
 
 function HomeHero() {
   return (
