@@ -1,24 +1,50 @@
-import { createClient } from "next-sanity";
+import { createClient, groq } from "next-sanity";
+import { Service } from "@/types/Service";
+import clientConfig from "@/sanity/schemas/config/client-config";
 
-export async function getServices() {
-  const client = createClient({
-    projectId: "xomm19bx",
-    dataset: "production",
-    apiVersion: "2023-04-18",
-  });
+export async function getServices(): Promise<Service[]> {
+  return createClient(clientConfig).fetch(
+    groq`
+    *[_type=="service"]{
+           _id,
+           _createdAt,
+            name,
+            description,
+            "slug": slug.current,
+            "image": image.asset->url,
+            category,
+            rating,
+            startPrice,
+            offer,
+            overview,
+            background,
+            url,
+            services,
+}
+    `
+  );
+}
 
-  return client.fetch(
-    `*[_type == "service"]{
-      _id,
-      _createdAt,
-      name,
-      "slug" : slug.current,
-      "image" : image.asset->url,
-      overview,
-      background,
-      "category" : category->name,
-      offer,
-      "services" : services[]->name
-     }`
+export async function getService(slug: string): Promise<Service> {
+  return createClient(clientConfig).fetch(
+    groq`
+    *[_type=="service" && slug.current == $slug][0]{
+           _id,
+           _createdAt,
+            name,
+            description,
+            "slug": slug.current,
+            "image": image.asset->url,
+            category,
+            rating,
+            startPrice,
+            offer,
+            overview,
+            background,
+            url,
+            services,
+}
+    `,
+    { slug }
   );
 }

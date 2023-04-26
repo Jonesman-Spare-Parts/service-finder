@@ -1,14 +1,15 @@
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
 import schemas from "@/sanity/schemas";
+import { visionTool } from "@sanity/vision";
 
 const config = defineConfig({
   projectId: "xomm19bx",
   dataset: "production",
-  title: "Service Finder CMS",
-  apiVersion: "2023-04-18",
+  title: "ServiceHub",
+  apiVersion: "2023-03-04",
   basePath: "/admin",
-  plugins: [deskTool()],
+  plugins: [deskTool(), visionTool()],
   schema: { types: schemas },
 });
 
