@@ -9,10 +9,7 @@ interface ServiceCardProps {
   service: Service;
 }
 
-const img =
-  "https://image.winudf.com/v2/image/Y29tLnNhbW9vbnByaS5jb2ZmZWVzaG9wLnJlc3R1cmFudGRlc2lnbl9zY3JlZW5zaG90c181X2M1ZmFkNTg4/screen-4.jpg?fakeurl=1&type=.jpg";
-
-export function ServiceCard({ id, service }: ServiceCardProps) {
+export function ServiceCard({ service }: ServiceCardProps) {
   return (
     <div className="w-full flex flex-col justify-between max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div>

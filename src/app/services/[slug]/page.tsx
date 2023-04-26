@@ -26,8 +26,6 @@ type PageProps = {
 };
 
 async function Page({ params }: PageProps) {
-  const image: string =
-    "https://www.hospitalitynet.org/picture/xxl_153107378.jpg";
   const slug = params.slug;
   const service = await getService(slug);
   return (

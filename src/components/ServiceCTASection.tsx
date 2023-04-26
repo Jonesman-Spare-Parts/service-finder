@@ -10,7 +10,6 @@ type ServiceCTASectionProps = {
 
 function ServiceCtaSection({
   serviceName,
-  serviceIcon,
   externalLink,
 }: ServiceCTASectionProps) {
   return (
