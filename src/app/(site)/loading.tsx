@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import spinner from "../assets/images/iphone-spinner-1.gif";
+import spinner from "@/assets/images/iphone-spinner-1.gif";
 
 function Loading() {
   return (

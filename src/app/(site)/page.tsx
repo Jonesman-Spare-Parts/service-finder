@@ -1,5 +1,5 @@
 "use client";
-import "../styles/global.css";
+import "@/styles/global.css";
 import HomeHero from "@/components/HomeHero";
 import ServicesLogos from "@/components/ServicesLogos";
 import CategoryList from "@/components/CategoryList";

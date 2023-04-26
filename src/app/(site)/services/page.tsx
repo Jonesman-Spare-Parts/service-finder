@@ -1,4 +1,4 @@
-import "../../styles/global.css";
+import "@/styles/global.css";
 import "pure-react-carousel/dist/react-carousel.es.css";
 import { Carousel, Item } from "@/components/Carousel";
 import { getServices } from "@/sanity/sanity-utils";
