@@ -4,6 +4,7 @@ import { Item } from "@/components/Carousel";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/all";
 import DiscountCTASection from "@/components/DiscountCTASection";
+import { getService } from "@/sanity/sanity-utils";
 
 const items: Item[] = [
   {
@@ -20,22 +21,32 @@ const items: Item[] = [
   },
 ];
 
-async function Page({ params }: { params: { id: string } }) {
+type PageProps = {
+  params: { slug: string };
+};
+
+async function Page({ params }: PageProps) {
   const image: string =
     "https://www.hospitalitynet.org/picture/xxl_153107378.jpg";
+  const slug = params.slug;
+  const service = await getService(slug);
   return (
     <section className={"flex flex-col justify-between gap-16"}>
       <div>
         <div className={"flex justify-center "}>
           <Image
             className={"rounded-xl"}
-            src={image}
-            height={600}
-            width={1200}
+            src={service.image}
+            height={300}
+            width={1000}
             alt={"image"}
           />
         </div>
-        <ServiceCTASection />
+        <ServiceCTASection
+          serviceName={service.name}
+          serviceIcon={""}
+          externalLink={service.url}
+        />
       </div>
       <div
         className={
@@ -49,19 +60,13 @@ async function Page({ params }: { params: { id: string } }) {
             >
               Overview
             </h2>
-            <p className={"text-lg"}>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-              accusamus aperiam, atque delectus distinctio doloribus ea eum
-              fugiat harum in laudantium nemo nobis provident quod repellat
-              reprehenderit rerum tempore vel?harum in laudantium nemo nobis
-              provident quod repellat reprehenderit rerum tempore vel?
-            </p>
+            <p className={"text-lg"}>{service.overview}</p>
           </div>
           <ul className={"grid grid-cols-2"}>
-            {Array.from({ length: 7 }).map((_, index) => (
+            {service.services.map((service, index) => (
               <li key={index} className={"flex items-center   "}>
                 <FaCheckCircle className={"mr-2 text-green-500"} />
-                <span>{index}</span>
+                <span>{service}</span>
               </li>
             ))}
           </ul>
@@ -73,27 +78,15 @@ async function Page({ params }: { params: { id: string } }) {
             >
               Background
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-              accusamus aperiam, atque delectus distinctio doloribus ea eum
-              fugiat harum in laudantium nemo nobis provident quod repellat
-              reprehenderit rerum tempore vel?harum in laudantium nemo nobis
-              provident quod repellat reprehenderit rerum tempore vel?
-            </p>
+            <p>{service.background}</p>
           </div>
           <div>
             <h2
               className={"mb-2 text-2xl font-bold text-black  dark:text-white"}
             >
-              Our offer
+              Their offer
             </h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. A
-              accusamus aperiam, atque delectus distinctio doloribus ea eum
-              fugiat harum in laudantium nemo nobis provident quod repellat
-              reprehenderit rerum tempore vel?harum in laudantium nemo nobis
-              provident quod repellat reprehenderit rerum tempore vel?
-            </p>
+            <p>{service.offer}</p>
           </div>
         </div>
       </div>

@@ -25,9 +25,11 @@ export default async function Page() {
   console.log("services", services);
   return (
     <div>
-      <Carousel items={items} />
+      <div className={"hidden md:block"}>
+        <Carousel items={items} />
+      </div>
 
-      <section className={"grid grid-cols-3 lg:grid-cols-4  gap-4"}>
+      <section className={"grid  md:grid-cols-3 lg:grid-cols-4  gap-4"}>
         {services.map((service: Service) => (
           <ServiceCard key={service._id} id={service._id} service={service} />
         ))}

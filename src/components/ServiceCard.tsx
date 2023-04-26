@@ -9,26 +9,35 @@ interface ServiceCardProps {
   service: Service;
 }
 
+const img =
+  "https://image.winudf.com/v2/image/Y29tLnNhbW9vbnByaS5jb2ZmZWVzaG9wLnJlc3R1cmFudGRlc2lnbl9zY3JlZW5zaG90c181X2M1ZmFkNTg4/screen-4.jpg?fakeurl=1&type=.jpg";
+
 export function ServiceCard({ id, service }: ServiceCardProps) {
   return (
-    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-      <Link href={`/services/${id}`}>
-        <Image
-          className={"rounded-t-lg"}
-          width={500}
-          height={250}
-          src={
-            "https://image.winudf.com/v2/image/Y29tLnNhbW9vbnByaS5jb2ZmZWVzaG9wLnJlc3R1cmFudGRlc2lnbl9zY3JlZW5zaG90c181X2M1ZmFkNTg4/screen-4.jpg?fakeurl=1&type=.jpg"
-          }
-          alt={"service image"}
-        />
-      </Link>
+    <div className="w-full flex flex-col justify-between max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div>
+        <Link href={`/services/${service.slug}`}>
+          <Image
+            className={"rounded-t-lg"}
+            width={500}
+            height={250}
+            loading={"lazy"}
+            src={service.image || ""}
+            alt={"service image"}
+          />
+        </Link>
+        {/*<div className={"mt-2"}>*/}
+        {/*  <span className=" uppercase font-semibold bg-blue-100 text-blue-800 text-xs mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3">*/}
+        {/*    {service.category}*/}
+        {/*  </span>*/}
+        {/*</div>*/}
+      </div>
       <div className="px-5 py-5">
-        <a href="#">
+        <Link href={`/services/${service.slug}`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {service.name}
           </h5>
-        </a>
+        </Link>
         <div className="flex items-center mt-2.5 mb-5">
           <FaStar className={"w-4 h-4 text-yellow-300"} />
           <FaStar className={"w-4 h-4 text-yellow-300"} />
@@ -50,7 +59,7 @@ export function ServiceCard({ id, service }: ServiceCardProps) {
             </div>
           </div>
           <Link
-            href={`/services/${service._id}`}
+            href={`/services/${service.slug}`}
             className="text-white w-full lg:w-3/6 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Checkout

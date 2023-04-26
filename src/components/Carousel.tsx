@@ -1,14 +1,6 @@
 "use client";
-import {
-  ButtonBack,
-  ButtonNext,
-  CarouselProvider,
-  Image,
-  Slide,
-  Slider,
-} from "pure-react-carousel";
+import { CarouselProvider, Image, Slide, Slider } from "pure-react-carousel";
 //import Image from "next/image";
-import Button from "@/components/Button";
 
 export type Item = {
   id: number;
@@ -43,14 +35,14 @@ export function Carousel(props: ServicesCarouselProps) {
         ))}
       </Slider>
 
-      <div className={"flex justify-end gap-4 mt-4"}>
-        <ButtonBack>
-          <Button name={"Back"} variant={"secondary"} />
-        </ButtonBack>
-        <ButtonNext>
-          <Button name={"Next"} variant={"secondary"} />
-        </ButtonNext>
-      </div>
+      {/*<div className={"flex justify-end gap-4 mt-4"}>*/}
+      {/*  <ButtonBack>*/}
+      {/*    <Button name={"Back"} variant={"secondary"} />*/}
+      {/*  </ButtonBack>*/}
+      {/*  <ButtonNext>*/}
+      {/*    <Button name={"Next"} variant={"secondary"} />*/}
+      {/*  </ButtonNext>*/}
+      {/*</div>*/}
     </CarouselProvider>
   );
 }

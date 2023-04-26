@@ -65,7 +65,7 @@ const service = {
     },
     {
       name: "offer",
-      title: "Our Offer",
+      title: "Their Offer",
       type: "text",
     },
     {
