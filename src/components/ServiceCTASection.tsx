@@ -4,6 +4,7 @@ import { FaExternalLinkAlt, FaShoppingCart } from "react-icons/fa";
 
 type ServiceCTASectionProps = {
   serviceName: string;
+  serviceCategory: string;
   serviceIcon: string;
   externalLink: string;
 };
@@ -11,19 +12,26 @@ type ServiceCTASectionProps = {
 function ServiceCtaSection({
   serviceName,
   externalLink,
+  serviceCategory,
 }: ServiceCTASectionProps) {
   return (
     <section className="bg-white dark:bg-gray-900">
-      <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
-        <div className="mx-auto max-w-screen-sm text-center flex flex-col justify-between gap-12 ">
+      <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-8 lg:px-6">
+        <div className="mx-auto max-w-screen-sm text-center flex flex-col justify-between gap-8 ">
           <div className="mb-6 md:mb-0 flex justify-center">
-            <a href="https://flowbite.com" className="flex items-center">
-              {/*<Image src={logo} className="mr-3 h-8" alt="FlowBite Logo" />*/}
+            <div className="flex flex-col items-center">
               <span className="self-center text-4xl font-semibold whitespace-nowrap dark:text-white">
                 {serviceName}
               </span>
-            </a>
+              <Link
+                href={`/services/category/${serviceCategory}`}
+                className=" mt-2 uppercase font-semibold bg-blue-100 text-blue-800  hover:bg-blue-200 hover:text-blue-900 text-xs mr-2 px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ml-3"
+              >
+                {serviceCategory}
+              </Link>
+            </div>
           </div>
+
           <div className={"flex justify-around font-bold text-lg"}>
             <a
               href="#"

@@ -19,7 +19,7 @@ export function Carousel(props: ServicesCarouselProps) {
       naturalSlideHeight={props.height ?? 30}
       totalSlides={props.items.length}
       isPlaying={true}
-      className={"mb-4"}
+      className={""}
       infinite={true}
     >
       <Slider className={"rounded-lg"}>
