@@ -23,7 +23,7 @@ const items: Item[] = [
   },
 ];
 
-function Page() {
+export default function Page() {
   const [services, setServices] = useState<Service[]>([]);
 
   const [search, setSearch] = useState<string>("");
@@ -44,11 +44,9 @@ function Page() {
 
       <div className={"grid  md:grid-cols-3 lg:grid-cols-4  gap-4"}>
         {services.map((service: Service) => (
-          <ServiceCard key={service?._id} id={service?._id} service={service} />
+          <ServiceCard key={service._id} id={service._id} service={service} />
         ))}
       </div>
     </section>
   );
 }
-
-export default Page;

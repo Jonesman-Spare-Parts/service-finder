@@ -1,5 +1,5 @@
 "use client";
-import { FaSearch } from "react-icons/fa";
+import { FaSearch } from "react-icons/all";
 import { useForm } from "react-hook-form";
 
 type PageProps = {

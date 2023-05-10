@@ -23,14 +23,15 @@ async function Page({ params }: PageProps) {
             "text-4xl text-gray-900  dark:text-white capitalize font-semibold"
           }
         >
-          {`${categoryServices[0]?.category} Services`}
+          {" "}
+          "{categoryServices[0].category}" Services
         </h1>
         <p className="text-gray-500 sm:text-xl dark:text-gray-400">
           {category?.description}
         </p>
       </div>
       <div className={"grid  md:grid-cols-3 lg:grid-cols-4  gap-4"}>
-        {categoryServices?.map((service: Service) => (
+        {categoryServices.map((service: Service) => (
           <ServiceCard key={service._id} id={service._id} service={service} />
         ))}
       </div>
