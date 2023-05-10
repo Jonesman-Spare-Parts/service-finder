@@ -1,25 +1,10 @@
 import React from "react";
 import ServiceCTASection from "@/components/ServiceCTASection";
-import { Item } from "@/components/Carousel";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import DiscountCTASection from "@/components/DiscountCTASection";
 import { getService } from "@/sanity/sanity-utils";
-
-const items: Item[] = [
-  {
-    id: 1,
-    image: "https://www.hospitalitynet.org/picture/xxl_153107378.jpg",
-  },
-  {
-    id: 2,
-    image: "https://www.hospitalitynet.org/picture/xxl_153107378.jpg",
-  },
-  {
-    id: 3,
-    image: "https://www.hospitalitynet.org/picture/xxl_153107378.jpg",
-  },
-];
+import "@/styles/global.css";
 
 type PageProps = {
   params: { slug: string };
@@ -44,6 +29,7 @@ async function Page({ params }: PageProps) {
           serviceName={service.name}
           serviceIcon={""}
           externalLink={service.url}
+          serviceCategory={service.category}
         />
       </div>
       <div
@@ -62,7 +48,7 @@ async function Page({ params }: PageProps) {
           </div>
           <ul className={"grid grid-cols-2"}>
             {service.services.map((service, index) => (
-              <li key={index} className={"flex items-center   "}>
+              <li key={index} className={"flex items-center  capitalize  "}>
                 <FaCheckCircle className={"mr-2 text-green-500"} />
                 <span>{service}</span>
               </li>

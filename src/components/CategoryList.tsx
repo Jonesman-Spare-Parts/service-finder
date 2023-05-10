@@ -6,36 +6,42 @@ import { TbSoup } from "react-icons/tb";
 const categoriesArr = [
   {
     name: "Restaurant",
+    slug: "restaurant",
     icon: <TbSoup />,
     description:
       "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
-    name: "Restaurant",
+    name: "Hotel",
+    slug: "hotel",
     icon: <TbSoup />,
     description:
       "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
-    name: "Restaurant",
+    name: "Beauty",
+    slug: "beauty",
     icon: <TbSoup />,
     description:
       "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
-    name: "Restaurant",
+    name: "Shopping",
+    slug: "shopping",
     icon: <TbSoup />,
     description:
       "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
-    name: "Restaurant",
+    name: "Finance",
+    slug: "finance",
     icon: <TbSoup />,
     description:
       "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
-    name: "Restaurant",
+    name: "Health",
+    slug: "health",
     icon: <TbSoup />,
     description:
       "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
@@ -58,7 +64,7 @@ function CategoryList() {
         <div className="space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-12 md:space-y-0">
           {categoriesArr.map((category, index) => (
             <Link
-              href={`/services/${category.name}`}
+              href={`/services/category/${category.slug}`}
               key={index}
               className={
                 "hover:bg-gray-100 hover:scale-105 rounded-lg p-4 transition ease-in-out delay-150"

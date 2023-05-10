@@ -29,7 +29,7 @@ export function ServiceCard({ service }: ServiceCardProps) {
         {/*  </span>*/}
         {/*</div>*/}
       </div>
-      <div className="px-5 py-5">
+      <div className="px-5 py-5 flex flex-col justify-start">
         <Link href={`/services/${service.slug}`}>
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {service.name}
@@ -47,11 +47,19 @@ export function ServiceCard({ service }: ServiceCardProps) {
           </span>
         </div>
         <div className="flex flex-col  lg:flex-row gap-4 justify-between">
-          <div className="flex gap-2 items-end ">
-            <div className={"text-sm text-gray-600 font-bold dark:text-white"}>
+          <div className="flex gap-2 justify-between items-end ">
+            <div
+              className={
+                "text-sm lg:text-xs w-full text-gray-600 font-bold dark:text-white"
+              }
+            >
               Starts at
             </div>
-            <div className={"text-2xl font-bold text-gray-900 dark:text-white"}>
+            <div
+              className={
+                "text-2xl lg:text-lg font-bold text-gray-900 dark:text-white"
+              }
+            >
               ${service.startPrice}
             </div>
           </div>
