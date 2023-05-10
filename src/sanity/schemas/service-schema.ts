@@ -1,3 +1,11 @@
+export const categoryList = [
+  "restaurant",
+  "hotel",
+  "shopping",
+  "health",
+  "beauty",
+  "finance",
+];
 const service = {
   name: "service",
   title: "Services",
@@ -12,7 +20,9 @@ const service = {
       name: "category",
       title: "Category",
       type: "string",
-      to: [{ type: "category" }],
+      options: {
+        list: [...categoryList],
+      },
     },
     {
       name: "url",
