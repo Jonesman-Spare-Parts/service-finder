@@ -10,7 +10,7 @@ const Page = () => (
     <Link href={"./blogs/blog"}>
       <h1 className={"text-2xl"}>All Blogs Page</h1>
     </Link>
-    <div className="box-border p-4 border-2 rounded-md mt-4">
+    <div className="box-border p-4 border-2 rounded-md mt-4 mx-24 w-3/5">
       <div className="flex space-x-4">
         <div className="">
           <h1 className="text-3xl font-bold text-black">
@@ -30,7 +30,7 @@ const Page = () => (
       <span>
         <span></span>
         <span>
-          <BiBookmarkPlus />
+          <BiBookmarkPlus className="text-xl"/>
         </span>
       </span>
     </div>
