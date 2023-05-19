@@ -13,14 +13,14 @@ function AboutHero() {
         >
           <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
             New
-          </span>{" "}
+          </span>
           <span className="text-sm font-medium">
             Get a 20% off your first service
           </span>
           <MdOutlineKeyboardArrowRight className={"w-5 h-5"} />
         </a>
         <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
-          We find services so you don't have to
+          We find services so you do not have to
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Here at ServiceHub, we are dedicated to helping you find the best
