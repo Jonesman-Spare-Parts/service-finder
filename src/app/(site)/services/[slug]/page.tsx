@@ -1,25 +1,10 @@
 import React from "react";
 import ServiceCTASection from "@/components/ServiceCTASection";
-import { Item } from "@/components/Carousel";
 import Image from "next/image";
 import { FaCheckCircle } from "react-icons/fa";
 import DiscountCTASection from "@/components/DiscountCTASection";
 import { getService } from "@/sanity/sanity-utils";
-
-const items: Item[] = [
-  {
-    id: 1,
-    image: "https://www.hospitalitynet.org/picture/xxl_153107378.jpg",
-  },
-  {
-    id: 2,
-    image: "https://www.hospitalitynet.org/picture/xxl_153107378.jpg",
-  },
-  {
-    id: 3,
-    image: "https://www.hospitalitynet.org/picture/xxl_153107378.jpg",
-  },
-];
+import "@/styles/global.css";
 
 type PageProps = {
   params: { slug: string };
@@ -27,23 +12,24 @@ type PageProps = {
 
 async function Page({ params }: PageProps) {
   const slug = params.slug;
-  const service = await getService(slug);
+  const service = await getService(slug || "");
   return (
     <section className={"flex flex-col justify-between gap-16"}>
       <div>
         <div className={"flex justify-center "}>
           <Image
             className={"rounded-xl"}
-            src={service.image}
+            src={service?.image}
             height={300}
             width={1000}
             alt={"image"}
           />
         </div>
         <ServiceCTASection
-          serviceName={service.name}
+          serviceName={service?.name}
           serviceIcon={""}
-          externalLink={service.url}
+          externalLink={service?.url}
+          serviceCategory={service?.category}
         />
       </div>
       <div
@@ -58,11 +44,11 @@ async function Page({ params }: PageProps) {
             >
               Overview
             </h2>
-            <p className={"text-lg"}>{service.overview}</p>
+            <p className={"text-lg"}>{service?.overview}</p>
           </div>
           <ul className={"grid grid-cols-2"}>
-            {service.services.map((service, index) => (
-              <li key={index} className={"flex items-center   "}>
+            {service?.services.map((service, index) => (
+              <li key={index} className={"flex items-center  capitalize  "}>
                 <FaCheckCircle className={"mr-2 text-green-500"} />
                 <span>{service}</span>
               </li>
@@ -76,7 +62,7 @@ async function Page({ params }: PageProps) {
             >
               Background
             </h2>
-            <p>{service.background}</p>
+            <p>{service?.background}</p>
           </div>
           <div>
             <h2
@@ -84,7 +70,7 @@ async function Page({ params }: PageProps) {
             >
               Their offer
             </h2>
-            <p>{service.offer}</p>
+            <p>{service?.offer}</p>
           </div>
         </div>
       </div>
