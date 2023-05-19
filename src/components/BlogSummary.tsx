@@ -25,7 +25,7 @@ export function BlogSummary({ blog }: BlogSummary) {
           <Image
             src={blog.image}
             alt=""
-            width={300}
+            width={250}
             height={200}
             className={"rounded-lg"}
           />
