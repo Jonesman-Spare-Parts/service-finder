@@ -2,6 +2,7 @@ import { createClient, groq } from "next-sanity";
 import { Service } from "@/types/Service";
 import clientConfig from "@/sanity/schemas/config/client-config";
 import { Category } from "@/types/Category";
+import { Blog } from "@/types/Blog";
 
 export async function getServices(searchValue: string): Promise<Service[]> {
   return createClient(clientConfig).fetch(
@@ -103,6 +104,23 @@ export async function getCategories(): Promise<Category[]> {
             description,
             "slug": slug.current,
             icon,
+}
+    `
+  );
+}
+
+export async function getBlogs(searchValue: string): Promise<Blog[]> {
+  return createClient(clientConfig).fetch(
+    groq`
+    *[_type=="blog" && title match "*${searchValue}*" ]{
+           _id,
+           _createdAt,
+            title,
+            author,
+            "slug": slug.current,
+            "image": image.asset->url,
+            content,
+            category,
 }
     `
   );
