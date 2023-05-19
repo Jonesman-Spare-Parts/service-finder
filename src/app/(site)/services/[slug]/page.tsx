@@ -12,24 +12,24 @@ type PageProps = {
 
 async function Page({ params }: PageProps) {
   const slug = params.slug;
-  const service = await getService(slug);
+  const service = await getService(slug || "");
   return (
     <section className={"flex flex-col justify-between gap-16"}>
       <div>
         <div className={"flex justify-center "}>
           <Image
             className={"rounded-xl"}
-            src={service.image}
+            src={service?.image}
             height={300}
             width={1000}
             alt={"image"}
           />
         </div>
         <ServiceCTASection
-          serviceName={service.name}
+          serviceName={service?.name}
           serviceIcon={""}
-          externalLink={service.url}
-          serviceCategory={service.category}
+          externalLink={service?.url}
+          serviceCategory={service?.category}
         />
       </div>
       <div
@@ -44,10 +44,10 @@ async function Page({ params }: PageProps) {
             >
               Overview
             </h2>
-            <p className={"text-lg"}>{service.overview}</p>
+            <p className={"text-lg"}>{service?.overview}</p>
           </div>
           <ul className={"grid grid-cols-2"}>
-            {service.services.map((service, index) => (
+            {service?.services.map((service, index) => (
               <li key={index} className={"flex items-center  capitalize  "}>
                 <FaCheckCircle className={"mr-2 text-green-500"} />
                 <span>{service}</span>
@@ -62,7 +62,7 @@ async function Page({ params }: PageProps) {
             >
               Background
             </h2>
-            <p>{service.background}</p>
+            <p>{service?.background}</p>
           </div>
           <div>
             <h2
@@ -70,7 +70,7 @@ async function Page({ params }: PageProps) {
             >
               Their offer
             </h2>
-            <p>{service.offer}</p>
+            <p>{service?.offer}</p>
           </div>
         </div>
       </div>
