@@ -31,7 +31,8 @@ const category = {
     {
       name: "icon",
       title: "Icon",
-      type: "string",
+      type: "image",
+      accept: ".svg",
     },
     {
       name: "description",
