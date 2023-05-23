@@ -17,7 +17,7 @@ export function BlogSummary({ blog }: BlogSummary) {
           <p className="text-slate-400 line-clamp-3">
             <PortableText value={blog.content} />
           </p>
-          <Link href="#" className={"underline italic text-gray-500"}>
+          <Link href={`/blogs/blog/${blog.slug}`} className={"underline italic text-gray-500"}>
             Read more
           </Link>
         </div>
