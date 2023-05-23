@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BiBookmarkPlus } from "react-icons/bi";
 import Image from "next/image";
 import bookImage from "@/assets/images/social-media-concept-with-smartphone.jpg";
+import "@/styles/global.css";
 
 const Page = () => (
   <div>
@@ -27,13 +28,14 @@ const Page = () => (
           <Image src={bookImage} alt="" width={330} />
         </div>
       </div>
-      <span>
-        <span></span>
-        <span>
-          <BiBookmarkPlus className="text-xl"/>
-        </span>
+      <span className="pt-4 flex text-slate-400">
+        <span>April 4 . </span>
+        <span> 38 min read .</span>
+        <span className="mr-64">Topic</span>
+          <BiBookmarkPlus className="text-2xl"/>
       </span>
     </div>
+    <SideBlog/>
   </div>
 );
 
