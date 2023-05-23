@@ -124,4 +124,22 @@ export async function getBlogs(searchValue: string): Promise<Blog[]> {
 }
     `
   );
+  
+}
+
+export async function getBlog(slug: string): Promise<Blog> {
+  return createClient(clientConfig).fetch(
+    groq`
+    *[_type=="blog" && slug.current == $slug][0]{
+      _id,
+      _createdAt,
+       title,
+       author,
+       "slug": slug.current,
+       "image": image.asset->url,
+       content,
+       category,
+    }`,
+    { slug }
+  );
 }

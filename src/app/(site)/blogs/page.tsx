@@ -5,6 +5,7 @@ import SearchBar from "@/components/SearchBar";
 import { BlogSummary } from "@/components/BlogSummary";
 import { getBlogs } from "@/sanity/sanity-utils";
 import { Blog } from "@/types/Blog";
+import SideBlog from "@/components/SideBlog"
 
 const Page = () => {
   const [blogs, setBlogs] = useState<Blog[]>([]);
@@ -23,7 +24,7 @@ const Page = () => {
         <h1
           className={
             "text-4xl text-gray-900  dark:text-white capitalize font-bold"
-          }
+           }
         >
           All Blogs
         </h1>
@@ -36,15 +37,25 @@ const Page = () => {
           voluptatum. Beatae.
         </p>
       </div>
-      <div className={"w-3/5 flex flex-col gap-8"}>
-        <SearchBar onSearch={handleDataFromSearch} />
-        <div className={" flex flex-col gap-16"}>
-          {blogs.map((blog) => (
-            <BlogSummary blog={blog} />
-          ))}
+
+      <div className="flex gap-20">
+        <div className={"w-3/5 flex flex-col gap-8"}>
+          <SearchBar onSearch={handleDataFromSearch} />
+
+          <div className={" flex flex-col gap-16"}>
+            {blogs.map((blog, index) => (
+              <BlogSummary blog={blog} key={index} />
+            ))}
+          </div>
+          
+        </div>
+        <div>
+          <SideBlog/>
         </div>
       </div>
+
     </div>
+    
   );
 };
 
