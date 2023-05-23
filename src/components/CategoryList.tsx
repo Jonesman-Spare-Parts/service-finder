@@ -3,7 +3,7 @@ import CategoryCard from "@/components/CategoryCard";
 import Link from "next/link";
 import { TbSoup } from "react-icons/tb";
 
-const categoriesArr = [
+export const categoriesArr = [
   {
     name: "Restaurant",
     slug: "restaurant",
