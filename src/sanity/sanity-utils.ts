@@ -94,10 +94,10 @@ export async function getCategory(slug: string): Promise<Category> {
   );
 }
 
-export async function getCategories(): Promise<Category[]> {
+export async function getCategories(searchValue: string): Promise<Category[]> {
   return createClient(clientConfig).fetch(
     groq`
-    *[_type=="categories"]{
+    *[_type=="categories && name match "*${searchValue}*"]{
            _id,
            _createdAt,
             name,
