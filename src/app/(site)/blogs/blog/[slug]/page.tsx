@@ -20,13 +20,13 @@ async function Page({ params }: PageProps) {
           <Image
             src={blog.image}
             alt=""
-            width={900}
+            width={600}
             height={200}
             className={"rounded-lg"}
           />
         </div>
-          <h1 className="pt-8 font-bold text-2xl">{blog.title}</h1>
-          <p className="pt-4 text-justify">
+          <h1 className="py-8 font-bold text-3xl text-black max-w-6xl">{blog.title}</h1>
+          <p className="pt-4 text-justify max-w-7xl">
           <PortableText value={blog.content} />
           </p>
         </div>
