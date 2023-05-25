@@ -25,7 +25,7 @@ async function Page({ params }: PageProps) {
             className={"rounded-lg"}
           />
         </div>
-          <h1 className="py-8 font-bold text-3xl justify-start text-slate-900 max-w-6xl">{blog.title}</h1>
+          <h1 className="py-8 font-bold text-3xl justify-start text-slate-900 max-w-2xl">{blog.title}</h1>
           <p className="pt-4 text-justify max-w-2xl">
           <PortableText value={blog.content} />
           </p>
