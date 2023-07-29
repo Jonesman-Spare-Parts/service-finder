@@ -9,42 +9,42 @@ export const categoriesArr = [
     slug: "restaurant",
     icon: <TbSoup />,
     description:
-      "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
+      "Get food from  favorite restaurant at Takoradi  at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
     name: "Hotel",
     slug: "hotel",
     icon: <TbSoup />,
     description:
-      "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
+      "Get food from  favorite restaurant at Takoradi  at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
     name: "Beauty",
     slug: "beauty",
     icon: <TbSoup />,
     description:
-      "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
+      "Get food from  favorite restaurant at Takoradi  at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
     name: "Shopping",
     slug: "shopping",
     icon: <TbSoup />,
     description:
-      "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
+      "Get food from  favorite restaurant at Takoradi  at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
     name: "Finance",
     slug: "finance",
     icon: <TbSoup />,
     description:
-      "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
+      "Get food from  favorite restaurant at Takoradi  at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
   {
     name: "Health",
     slug: "health",
     icon: <TbSoup />,
     description:
-      "Get food from  favorite restaurant at Takoradi harbour at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
+      "Get food from  favorite restaurant at Takoradi  at affordable prices. All restaurants are properly vetted to ensure their compliance with standardized food safeties",
   },
 ];
 

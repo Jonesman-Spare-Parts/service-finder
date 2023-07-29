@@ -24,7 +24,7 @@ function AboutHero() {
         </h1>
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Here at ServiceHub, we are dedicated to helping you find the best
-          available services at Takoradi Harbour so you can focus on what
+          available services at Takoradi  so you can focus on what
           matters most.
         </p>
         <div className="flex flex-col mb-8 lg:mb-16 space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
