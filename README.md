@@ -1,12 +1,12 @@
 # SERVICE HUB
 A platform that help users find easily Services and information about services  at Takoradi
 
-## GROUP MEMBERS
+## GROUP MEMBERS 
 
 * SAMUEL ARTHUR JUNIOR - BTSEG22015
-* SARAH OWUSU - 
-* KEVIN AIHOON - 
-* CLEMENT OFFEI - 
+* SARAH OWUSU - BTSEG22018
+* KEVIN AIHOON - BTSEG22024
+* CLEMENT OFFEI - BTSEG22032
 
 
 ## Getting Started
